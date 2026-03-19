@@ -6,6 +6,14 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  turbopack: {
+    rules: {
+      "*.mdx": {
+        loaders: ["@mdx-js/loader"],
+        as: "*.tsx",
+      },
+    },
+  },
 };
 const withMDX = createMDX({
   options: {
