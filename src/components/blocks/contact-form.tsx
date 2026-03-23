@@ -148,7 +148,7 @@ export function ContactForm() {
         <Button
           type="submit"
           className="w-full mt-1"
-          style={{ backgroundColor: "oklch(0.65 0.18 86.47)", color: "white" }}
+          style={{ backgroundColor: "var(--brand)", color: "var(--brand-foreground)" }}
         >
           {isExecuting ? "Submitting..." : "Submit inquiry"}
         </Button>

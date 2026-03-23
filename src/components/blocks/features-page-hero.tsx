@@ -46,8 +46,7 @@ export function FeaturesPageHero() {
           {FEATURES.map((f, i) => (
             <div key={i} className="bg-background p-6 lg:p-8 flex flex-col gap-3">
               <div
-                className="size-2 rounded-full shrink-0"
-                style={{ backgroundColor: "oklch(0.65 0.18 86.47)" }}
+                className="size-2 rounded-full shrink-0 bg-brand"
               />
               <h3 className="text-base font-medium leading-snug">{f.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed font-serif">

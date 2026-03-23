@@ -45,7 +45,7 @@ export default function Contact() {
                   <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <span
                       className="flex size-5 shrink-0 items-center justify-center rounded-full"
-                      style={{ backgroundColor: "oklch(0.145 0 0)" }}
+                      style={{ backgroundColor: "var(--foreground)" }}
                     >
                       <Check className="size-3 text-white" />
                     </span>

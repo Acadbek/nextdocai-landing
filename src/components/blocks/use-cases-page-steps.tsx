@@ -42,7 +42,7 @@ export const UseCasesPageSteps = () => (
           >
             <span
               className="text-4xl leading-none"
-              style={{ color: "oklch(0.65 0.18 86.47)" }}
+              style={{ color: "var(--brand)" }}
             >
               {step.number}
             </span>

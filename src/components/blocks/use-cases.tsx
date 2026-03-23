@@ -12,7 +12,7 @@ import {
 
 import { DashedLine } from "../dashed-line";
 
-const ICON_STYLE = { color: "oklch(0.65 0.18 86.47)" };
+const ICON_STYLE = { color: "var(--brand)" };
 
 const smallItems = [
   { icon: NotebookPen, title: "Meeting notes → reports" },

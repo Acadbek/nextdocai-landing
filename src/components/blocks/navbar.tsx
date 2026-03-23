@@ -55,8 +55,7 @@ export const Navbar = () => {
                   {link.label}
                   {pathname === link.href && (
                     <span
-                      className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full"
-                      style={{ backgroundColor: "oklch(0.65 0.18 86.47)" }}
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full bg-brand"
                     />
                   )}
                 </Link>

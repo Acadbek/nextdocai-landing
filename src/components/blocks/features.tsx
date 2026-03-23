@@ -86,8 +86,8 @@ export const Features = () => {
                       <h3 className="font-display max-w-60 text-xl leading-tight font-bold tracking-tight">
                         {item.title}
                       </h3>
-                      <div className="rounded-full border p-2 transition-colors opacity-50 group-hover:opacity-100 group-hover:bg-[oklch(0.65_0.18_86.47)]" style={{ borderColor: "oklch(0.65 0.18 86.47)", backgroundColor: "oklch(0.65 0.18 86.47 / 0.12)" }}>
-                        <ChevronRight className="size-5 transition-colors group-hover:text-white lg:size-6" style={{ color: "oklch(0.65 0.18 86.47)" }} />
+                      <div className="rounded-full border p-2 transition-colors opacity-50 group-hover:opacity-100 group-hover:bg-brand" style={{ borderColor: "var(--brand)", backgroundColor: "color-mix(in oklch, var(--brand) 12%, transparent)" }}>
+                        <ChevronRight className="size-5 transition-colors text-brand group-hover:text-white lg:size-6" />
                       </div>
                     </Link>
                   </div>
@@ -132,8 +132,8 @@ export const Features = () => {
                       <h3 className="font-display max-w-60 text-xl leading-tight font-bold tracking-tight">
                         {item.title}
                       </h3>
-                      <div className="rounded-full border p-2 transition-colors opacity-50 group-hover:opacity-100 group-hover:bg-[oklch(0.65_0.18_86.47)]" style={{ borderColor: "oklch(0.65 0.18 86.47)", backgroundColor: "oklch(0.65 0.18 86.47 / 0.12)" }}>
-                        <ChevronRight className="size-5 transition-colors group-hover:text-white lg:size-6" style={{ color: "oklch(0.65 0.18 86.47)" }} />
+                      <div className="rounded-full border p-2 transition-colors opacity-50 group-hover:opacity-100 group-hover:bg-brand" style={{ borderColor: "var(--brand)", backgroundColor: "color-mix(in oklch, var(--brand) 12%, transparent)" }}>
+                        <ChevronRight className="size-5 transition-colors text-brand group-hover:text-white lg:size-6" />
                       </div>
                     </Link>
                   </div>

@@ -125,7 +125,7 @@ export const Pricing = ({
           <span className={cn("text-sm font-medium", isAnnual && "text-foreground", !isAnnual && "text-muted-foreground")}>
             Annual
           </span>
-          <span className={cn("rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium transition-opacity", isAnnual ? "opacity-100" : "opacity-0")} style={{ color: "oklch(0.65 0.18 86.47)" }}>
+          <span className={cn("rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium transition-opacity", isAnnual ? "opacity-100" : "opacity-0")} style={{ color: "var(--brand)" }}>
             Save up to 59%
           </span>
         </div>
@@ -135,7 +135,7 @@ export const Pricing = ({
             <Card
               key={plan.name}
               className={cn(
-                plan.name === "Pro" ? "scale-[1.02] border-[oklch(0.65_0.18_86.47)] ring-3 ring-[oklch(0.65_0.18_86.47)] dark:border-[oklch(0.65_0.18_86.47)/50] dark:ring-[oklch(0.65_0.18_86.47)/30]" : ""
+                plan.name === "Pro" ? "scale-[1.02] border-brand ring-3 ring-brand dark:border-brand/50 dark:ring-brand/30" : ""
               )}
             >
               <CardContent className="flex flex-col gap-6 px-6 py-5">
@@ -143,7 +143,7 @@ export const Pricing = ({
                   <div className="flex items-center justify-between">
                     <h3 className="text-foreground font-semibold">{plan.name}</h3>
                     {isAnnual && plan.badge && (
-                      <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium" style={{ color: "oklch(0.65 0.18 86.47)" }}>
+                      <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium" style={{ color: "var(--brand)" }}>
                         {plan.badge}
                       </span>
                     )}
@@ -169,7 +169,7 @@ export const Pricing = ({
                 <Button
                   className="w-full dark:border-border"
                   variant={plan.name === "Pro" ? "default" : "outline"}
-                  style={plan.name === "Pro" ? { backgroundColor: "oklch(0.65 0.18 86.47)", color: "white", borderColor: "oklch(0.55 0.20 86.47)" } : undefined}
+                  style={plan.name === "Pro" ? { backgroundColor: "var(--brand)", color: "var(--brand-foreground)", borderColor: "var(--brand-dark)" } : undefined}
                 >
                   Get started
                 </Button>
@@ -186,7 +186,7 @@ export const Pricing = ({
                       )}
                     >
                       {(i > 0 || plan.name === "Free") && (
-                        <Check className="size-4 mt-0.5 shrink-0 dark:opacity-60" style={{ color: "oklch(0.65 0.18 86.47)" }} />
+                        <Check className="size-4 mt-0.5 shrink-0 dark:opacity-60" style={{ color: "var(--brand)" }} />
                       )}
                       <span className="text-sm">{feature}</span>
                     </div>

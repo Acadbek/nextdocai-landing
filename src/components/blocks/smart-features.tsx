@@ -69,7 +69,7 @@ const bottomFeatures = [
 const FeatureItem = ({ icon: Icon, title, description }: { icon: React.ElementType; title: string; description: string }) => (
   <div className="flex-1 p-6 lg:p-8">
     <div className="mb-4 inline-flex">
-      <Icon className="size-6" strokeWidth={1.5} style={{ color: "oklch(0.65 0.18 86.47)" }} />
+      <Icon className="size-6 text-brand" strokeWidth={1.5} />
     </div>
     <h3 className="text-foreground text-base font-semibold mb-2">{title}</h3>
     <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>

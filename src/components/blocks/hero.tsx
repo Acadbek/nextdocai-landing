@@ -53,7 +53,7 @@ export const Hero = () => {
       </div>
 
       <div className="flex justify-center mt-16 md:mt-28 px-3 sm:px-4 md:px-0">
-        <div className="max-w-225 w-full rounded-3xl pt-2 border border-border dark:border-[oklch(0.65_0.18_86.47)] focus-within:border-[oklch(0.65_0.18_86.47)] focus-within:ring-1 focus-within:ring-[oklch(0.65_0.18_86.47)] transition-all bg-card relative pb-14">
+        <div className="max-w-225 w-full rounded-3xl pt-2 border border-border dark:border-brand focus-within:border-brand focus-within:ring-1 focus-within:ring-brand transition-all bg-card relative pb-14">
           <textarea
             className="w-full min-h-22.5 md:min-h-37.5 border-none shadow-none bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 resize-none px-4 py-2 text-foreground placeholder:text-muted-foreground focus:outline-none"
             id="prompt"
@@ -68,7 +68,7 @@ export const Hero = () => {
                 className="flex items-center justify-center h-6.75 w-6.75 rounded-md bg-primary/10 hover:bg-primary/20 active:scale-[0.95] transition-colors cursor-pointer"
                 aria-label="Options"
               >
-                <Settings2 className="w-4 h-4" style={{ color: "oklch(0.65 0.18 86.47)" }} />
+                <Settings2 className="w-4 h-4 text-brand" />
               </button>
               {open && (
                 <div className="absolute bottom-full left-0 mb-2 w-44 rounded-xl border border-border bg-popover shadow-lg py-1.5 z-30">
@@ -78,7 +78,7 @@ export const Hero = () => {
                       className="w-full text-left px-3 py-2 text-xs font-medium flex items-center gap-2.5 hover:bg-primary/5 transition-colors"
                       onClick={() => setOpen(false)}
                     >
-                      <Icon className="w-3.5 h-3.5 shrink-0" style={{ color: "oklch(0.65 0.18 86.47)" }} />
+                      <Icon className="w-3.5 h-3.5 shrink-0 text-brand" />
                       <span className="text-foreground">{label}</span>
                     </button>
                   ))}
@@ -93,7 +93,7 @@ export const Hero = () => {
                   key={label}
                   type="button"
                   className="rounded-full flex items-center justify-center gap-1.5 h-6.75 px-2.5 text-xs font-normal border transition-colors bg-primary/10 hover:bg-primary/20 active:scale-[0.97] cursor-pointer"
-                  style={{ color: "oklch(0.65 0.18 86.47)", borderColor: "oklch(0.65 0.18 86.47)" }}
+                  style={{ color: "var(--brand)", borderColor: "var(--brand)" }}
                 >
                   <Icon className="w-3.5 h-3.5 shrink-0" />
                   {label}
@@ -104,7 +104,7 @@ export const Hero = () => {
             <div>
               <button
                 className="whitespace-nowrap ring-offset-background focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 py-2 h-9 px-4 rounded-full text-sm font-semibold flex items-center justify-center gap-1.5 transition-all hover:opacity-90 active:scale-[0.97] cursor-pointer"
-                style={{ backgroundColor: "oklch(0.65 0.18 86.47)", color: "white", border: "1.5px solid oklch(0.55 0.20 86.47)" }}
+                style={{ backgroundColor: "var(--brand)", color: "var(--brand-foreground)", border: "1.5px solid var(--brand-dark)" }}
                 type="submit"
               >
                 Generate
