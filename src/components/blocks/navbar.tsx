@@ -68,7 +68,7 @@ export const Navbar = () => {
         <div className="flex items-center gap-2.5">
           <ThemeToggle />
           <Link href="/login" className="max-lg:hidden">
-            <Button className="rounded-3xl border-primary" variant="default">
+            <Button className="border-primary" variant="default">
               <span className="relative z-10">Login</span>
             </Button>
           </Link>
