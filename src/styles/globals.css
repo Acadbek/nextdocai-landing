@@ -1,28 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "PublicSans";
-  src: url("/fonts/sans.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "PublicSerif";
-  src: url("/fonts/serif.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "PublicMono";
-  src: url("/fonts/mono.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
 
 @import "tw-animate-css";
 @plugin '@tailwindcss/typography';
@@ -75,12 +52,13 @@
   --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
 
-  --font-dm-sans: "PublicSans", sans-serif;
-  --font-inter: "inter", sans-serif;
+  --font-inter: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-lora: Lora, ui-serif, Georgia, serif;
+  --font-jetbrains-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --font-sans: var(--font-dm-sans), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "PublicSerif", ui-serif, Georgia, serif;
-  --font-mono: "PublicMono", ui-monospace, SFMono-Regular, monospace;
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-lora);
+  --font-mono: var(--font-jetbrains-mono);
 
   /* StyleGlide provides a better abstraction for fonts */
   --display-family: var(--font-sans);

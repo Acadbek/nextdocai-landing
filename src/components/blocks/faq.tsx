@@ -53,25 +53,28 @@ const categories = [
 
 export const FAQ = ({
   headerTag = "h2",
+  title,
   className,
   className2,
 }: {
   headerTag?: "h1" | "h2";
+  title?: string;
   className?: string;
   className2?: string;
 }) => {
+  const headingText = title ?? "Got Questions?";
   return (
     <section className={cn("py-20 lg:py-28", className)}>
       <div className="container max-w-5xl">
         <div className={cn("mx-auto grid gap-16 lg:grid-cols-2", className2)}>
           <div className="space-y-4">
             {headerTag === "h1" ? (
-              <h1 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-                Got Questions?
+              <h1 className="text-4xl tracking-tight md:text-5xl lg:text-6xl">
+                {headingText}
               </h1>
             ) : (
               <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-                Got Questions?
+                {headingText}
               </h2>
             )}
             <p className="text-muted-foreground max-w-md leading-snug lg:mx-auto font-serif">

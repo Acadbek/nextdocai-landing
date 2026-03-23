@@ -15,10 +15,10 @@ import {
 import { cn } from "@/lib/utils";
 
 const ITEMS = [
-  { label: "Features", href: "#" },
-  { label: "Use Cases", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "Contact Us", href: "#" },
+  { label: "Features", href: "/features" },
+  { label: "Use Cases", href: "/use-cases" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export const Navbar = () => {
@@ -47,10 +47,18 @@ export const Navbar = () => {
                   href={link.href}
                   className={cn(
                     "relative bg-transparent px-3 py-1.5 text-sm tracking-wide transition-opacity hover:opacity-75",
-                    pathname === link.href && "text-muted-foreground",
+                    pathname === link.href
+                      ? "font-medium"
+                      : "text-muted-foreground",
                   )}
                 >
                   {link.label}
+                  {pathname === link.href && (
+                    <span
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full"
+                      style={{ backgroundColor: "oklch(0.65 0.18 86.47)" }}
+                    />
+                  )}
                 </Link>
               </NavigationMenuItem>
             ))}

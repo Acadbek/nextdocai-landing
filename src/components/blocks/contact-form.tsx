@@ -8,7 +8,6 @@ import * as z from "zod";
 
 import { serverAction } from "@/actions/server-action";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
@@ -18,13 +17,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { formSchema } from "@/lib/form-schema";
 
@@ -35,16 +27,13 @@ export function ContactForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      phone: "",
       email: "",
-      company: "",
-      employees: "",
       message: "",
-      agree: false,
-    } as unknown as Schema,
+    },
   });
   const formAction = useAction(serverAction, {
     onSuccess: () => {
-      // TODO: show success message
       form.reset();
     },
     onError: () => {
@@ -91,160 +80,78 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={handleSubmit}
-        className="flex w-full flex-col gap-2 space-y-4 rounded-md"
-      >
-        <FormField
-          control={form.control}
-          name="name"
-          rules={{ required: true }}
-          render={({ field }) => (
-            <FormItem className="w-full">
-              <FormLabel>Full name * </FormLabel>
-              <FormControl>
-                <Input
-                  type="text"
-                  value={field.value}
-                  onChange={(e) => {
-                    const val = e.target.value;
-                    field.onChange(val);
-                  }}
-                  placeholder="First and last name"
-                />
-              </FormControl>
+      <form onSubmit={handleSubmit} className="flex w-full flex-col gap-4">
+        {/* Name + Phone row */}
+        <div className="grid grid-cols-2 gap-4">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-muted-foreground text-sm">Your name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter your name" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-muted-foreground text-sm">Your number</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter your number" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        {/* Email */}
         <FormField
           control={form.control}
           name="email"
-          rules={{ required: true }}
           render={({ field }) => (
-            <FormItem className="w-full">
-              <FormLabel>Email address * </FormLabel>
+            <FormItem>
+              <FormLabel className="text-muted-foreground text-sm">Email address</FormLabel>
               <FormControl>
-                <Input
-                  type="text"
-                  value={field.value}
-                  onChange={(e) => {
-                    const val = e.target.value;
-                    field.onChange(val);
-                  }}
-                  placeholder="me@company.com"
-                />
+                <Input type="email" placeholder="Enter your email" {...field} />
               </FormControl>
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="company"
-          rules={{ required: false }}
-          render={({ field }) => (
-            <FormItem className="w-full">
-              <FormLabel>Company name </FormLabel>
-              <FormControl>
-                <Input
-                  type="text"
-                  value={field.value}
-                  onChange={(e) => {
-                    const val = e.target.value;
-                    field.onChange(val);
-                  }}
-                  placeholder="Company name"
-                />
-              </FormControl>
-
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <FormField
-          control={form.control}
-          rules={{ required: false }}
-          name="employees"
-          render={({ field }) => {
-            const options = [
-              { value: "1", label: "1" },
-              { value: "2-10", label: "2-10" },
-              { value: "11-50", label: "11-50" },
-              { value: "51-500", label: "51-500" },
-            ];
-            return (
-              <FormItem className="w-full">
-                <FormLabel>Number of employees </FormLabel>
-                <Select onValueChange={field.onChange} value={field.value}>
-                  <FormControl>
-                    <SelectTrigger className="w-full">
-                      <SelectValue placeholder="e.g. 11-50" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {options.map(({ label, value }) => (
-                      <SelectItem key={value} value={value}>
-                        {label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-
-                <FormMessage />
-              </FormItem>
-            );
-          }}
-        />
-
+        {/* Message */}
         <FormField
           control={form.control}
           name="message"
-          rules={{ required: true }}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Your message * </FormLabel>
+              <FormLabel className="text-muted-foreground text-sm">Write message</FormLabel>
               <FormControl>
                 <Textarea
                   {...field}
-                  placeholder="Write your message"
-                  className="resize-none"
+                  placeholder="Enter your messages"
+                  className="min-h-32 resize-none"
                 />
               </FormControl>
-
               <FormMessage />
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          rules={{ required: true }}
-          name="agree"
-          render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-y-0 space-x-1">
-              <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                  required
-                />
-              </FormControl>
-              <div className="space-y-1 leading-none">
-                <FormLabel>I agree to the terms and conditions</FormLabel>
 
-                <FormMessage />
-              </div>
-            </FormItem>
-          )}
-        />
-        <div className="flex w-full items-center justify-end pt-3">
-          <Button className="rounded-lg" size="sm">
-            {isExecuting ? "Submitting..." : "Submit"}
-          </Button>
-        </div>
+        <Button
+          type="submit"
+          className="w-full mt-1"
+          style={{ backgroundColor: "oklch(0.65 0.18 86.47)", color: "white" }}
+        >
+          {isExecuting ? "Submitting..." : "Submit inquiry"}
+        </Button>
       </form>
     </Form>
   );

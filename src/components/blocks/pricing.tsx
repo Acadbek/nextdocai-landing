@@ -77,23 +77,45 @@ const plans = [
   },
 ];
 
-export const Pricing = ({ className }: { className?: string }) => {
+export const Pricing = ({
+  className,
+  title,
+  subtitle,
+}: {
+  className?: string;
+  title?: string;
+  subtitle?: string;
+}) => {
   const [isAnnual, setIsAnnual] = useState(true);
 
   return (
     <section className={cn("py-20 lg:py-28", className)}>
-      <div className="container max-w-5xl">
-        <div className="space-y-4 text-center">
-          <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-            Pricing
-          </h2>
-          <p className="text-muted-foreground mx-auto max-w-xl leading-snug text-balance font-serif">
-            Start for free. Upgrade when you need more power.
-          </p>
+      {/* Page hero header — left-aligned, outside max-w-5xl */}
+      {title ? (
+        <div className="container mb-10">
+          <div className="space-y-4">
+            <h1 className="text-4xl tracking-tight md:text-5xl lg:text-6xl max-w-3xl">
+              {title}
+            </h1>
+            <p className="text-muted-foreground max-w-xl leading-snug font-serif">
+              {subtitle ?? "Start for free. Upgrade when you need more power."}
+            </p>
+          </div>
         </div>
+      ) : null}
+
+      <div className="container">
+        {!title && (
+          <div className="space-y-4 text-center mb-8">
+            <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">Pricing</h2>
+            <p className="text-muted-foreground mx-auto max-w-xl leading-snug text-balance font-serif">
+              {subtitle ?? "Start for free. Upgrade when you need more power."}
+            </p>
+          </div>
+        )}
 
         {/* Toggle */}
-        <div className="mt-8 flex items-center justify-center gap-3">
+        <div className={cn("flex items-center justify-center gap-3", title ? "mt-0" : "mt-8")}>
           <span className={cn("text-sm font-medium", !isAnnual && "text-foreground", isAnnual && "text-muted-foreground")}>Monthly</span>
           <Switch
             checked={isAnnual}
