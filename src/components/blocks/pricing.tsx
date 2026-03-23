@@ -77,7 +77,15 @@ const plans = [
   },
 ];
 
-export const Pricing = ({ className }: { className?: string }) => {
+export const Pricing = ({
+  className,
+  title,
+  subtitle,
+}: {
+  className?: string;
+  title?: string;
+  subtitle?: string;
+}) => {
   const [isAnnual, setIsAnnual] = useState(true);
 
   return (
@@ -85,10 +93,10 @@ export const Pricing = ({ className }: { className?: string }) => {
       <div className="container max-w-5xl">
         <div className="space-y-4 text-center">
           <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-            Pricing
+            {title ?? "Pricing"}
           </h2>
           <p className="text-muted-foreground mx-auto max-w-xl leading-snug text-balance font-serif">
-            Start for free. Upgrade when you need more power.
+            {subtitle ?? "Start for free. Upgrade when you need more power."}
           </p>
         </div>
 
