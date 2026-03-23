@@ -69,7 +69,7 @@ export const FAQ = ({
         <div className={cn("mx-auto grid gap-16 lg:grid-cols-2", className2)}>
           <div className="space-y-4">
             {headerTag === "h1" ? (
-              <h1 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
+              <h1 className="text-4xl tracking-tight md:text-5xl lg:text-6xl">
                 {headingText}
               </h1>
             ) : (

@@ -11,13 +11,13 @@ const Page = () => {
     <Background>
       {/* Hero */}
       <Pricing
-        className="py-28 text-center lg:pt-44 lg:pb-10"
+        className="py-28 lg:pt-44 lg:pb-10"
         title="Simple, Scalable pricing"
         subtitle="Choose the plan that's right for you and your team."
       />
 
       {/* Trusted by 20k+ */}
-      <div className="container max-w-5xl pb-10 flex flex-col items-center gap-3 text-center">
+      <div className="container max-w-5xl pb-10 flex flex-col mt-10 items-center gap-3 text-center">
         <Image
           src="/images/avatars-row.png"
           alt="Customers"

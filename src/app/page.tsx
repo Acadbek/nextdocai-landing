@@ -14,7 +14,7 @@ import { Pricing } from "@/components/blocks/pricing";
 export default function Home() {
   return (
     <>
-      <Background className="via-muted to-muted/80">
+      <Background>
         <Hero />
         <HowItWorks />
         {/* <Logos /> */}

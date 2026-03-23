@@ -8,7 +8,7 @@ import { UseCasesPageTestimonials } from "@/components/blocks/use-cases-page-tes
 export default function UseCasesPage() {
   return (
     <>
-      <Background className="via-muted to-muted/80">
+      <Background>
         <UseCasesPageHero />
         <UseCasesPageSteps />
         <UseCasesPageGrid />
