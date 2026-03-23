@@ -44,10 +44,9 @@ export default function Contact() {
                 {HOW_WE_HELP.map((item, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <span
-                      className="flex size-5 shrink-0 items-center justify-center rounded-full"
-                      style={{ backgroundColor: "var(--foreground)" }}
+                      className="flex size-5 shrink-0 items-center justify-center rounded-full bg-brand/15"
                     >
-                      <Check className="size-3 text-white" />
+                      <Check className="size-3 text-brand" />
                     </span>
                     {item}
                   </li>

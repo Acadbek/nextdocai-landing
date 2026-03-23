@@ -97,7 +97,7 @@ function ShowcaseCard({
           <div>
             <Button
               className="rounded-full gap-2"
-              style={{ backgroundColor: "var(--foreground)", color: "var(--background)" }}
+              style={{ backgroundColor: "var(--brand)", color: "var(--brand-foreground)" }}
             >
               Try now <ArrowRight className="size-4" />
             </Button>

@@ -30,7 +30,7 @@ export const UseCases = () => {
         {/* Header */}
         <div className="flex items-center gap-3 max-md:hidden">
           <DashedLine className="text-muted-foreground flex-1" />
-          <span className="text-muted-foreground shrink-0 font-mono text-sm tracking-wide">
+          <span className="text-brand shrink-0 font-mono text-sm tracking-widest uppercase">
             USE CASES
           </span>
           <DashedLine className="text-muted-foreground flex-1" />
