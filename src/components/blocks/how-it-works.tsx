@@ -32,7 +32,7 @@ export const HowItWorks = () => {
       <div className="container mx-auto flex flex-col items-center gap-14">
         {/* Header */}
         <div className="flex flex-col items-center gap-4 text-center">
-          <span className="text-[oklch(0.65_0.18_86.47)] text-sm font-mono uppercase tracking-widest">
+          <span className="text-brand text-sm font-mono uppercase tracking-widest">
             How It Works
           </span>
           <h2 className="text-foreground max-w-2xl text-3xl font-semibold tracking-tight lg:text-5xl">

@@ -86,10 +86,9 @@ function ShowcaseCard({
             {checks.map((c, i) => (
               <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground font-serif">
                 <span
-                  className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full"
-                  style={{ backgroundColor: "oklch(0.65 0.18 86.47 / 0.15)" }}
+                  className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-brand/15"
                 >
-                  <Check className="size-2.5" style={{ color: "oklch(0.65 0.18 86.47)" }} />
+                  <Check className="size-2.5 text-brand" />
                 </span>
                 {c}
               </li>
@@ -98,7 +97,7 @@ function ShowcaseCard({
           <div>
             <Button
               className="rounded-full gap-2"
-              style={{ backgroundColor: "oklch(0.145 0 0)", color: "white" }}
+              style={{ backgroundColor: "var(--brand)", color: "var(--brand-foreground)" }}
             >
               Try now <ArrowRight className="size-4" />
             </Button>
@@ -110,7 +109,7 @@ function ShowcaseCard({
           className="relative overflow-hidden rounded-2xl border"
           style={{
             background:
-              "radial-gradient(ellipse at 90% 90%, oklch(0.65 0.18 86.47 / 0.25) 0%, transparent 55%), white",
+              "radial-gradient(ellipse at 90% 90%, color-mix(in oklch, var(--brand) 25%, transparent) 0%, transparent 55%), white",
           }}
         >
           <Image

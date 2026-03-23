@@ -128,7 +128,7 @@ export function Globe({ className }: { className?: string }) {
           translate: -50% 0;
           margin-bottom: 4px;
           pointer-events: none;
-          background: oklch(0.65 0.18 86.47);
+          background: var(--brand);
           color: white;
           border: none;
           font-size: 0.58rem;
@@ -140,8 +140,8 @@ export function Globe({ className }: { className?: string }) {
           transition: opacity 0.3s;
         }
         .dark .globe-label {
-          background: oklch(0.72 0.16 86.47);
-          color: oklch(0.15 0.04 80);
+          background: var(--brand);
+          color: var(--background);
         }
         ${LABELS.map(m => `
           .globe-label-${m.id} {

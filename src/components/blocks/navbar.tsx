@@ -55,8 +55,7 @@ export const Navbar = () => {
                   {link.label}
                   {pathname === link.href && (
                     <span
-                      className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full"
-                      style={{ backgroundColor: "oklch(0.65 0.18 86.47)" }}
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full bg-brand"
                     />
                   )}
                 </Link>
@@ -69,7 +68,7 @@ export const Navbar = () => {
         <div className="flex items-center gap-2.5">
           <ThemeToggle />
           <Link href="/login" className="max-lg:hidden">
-            <Button className="rounded-3xl border-primary" variant="default">
+            <Button className="border-primary" variant="default">
               <span className="relative z-10">Login</span>
             </Button>
           </Link>

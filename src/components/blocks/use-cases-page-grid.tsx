@@ -12,7 +12,7 @@ import {
 
 import { DashedLine } from "@/components/dashed-line";
 
-const ICON_STYLE = { color: "oklch(0.65 0.18 86.47)" };
+const ICON_STYLE = { color: "var(--brand)" };
 
 const ITEMS = [
   {
@@ -78,7 +78,7 @@ export const UseCasesPageGrid = () => (
       {/* Header */}
       <div className="flex items-center gap-3 max-md:hidden">
         <DashedLine className="text-muted-foreground flex-1" />
-        <span className="bg-background text-muted-foreground shrink-0 font-mono text-sm tracking-wide">
+        <span className="text-brand shrink-0 font-mono text-sm tracking-widest uppercase">
           USE CASES
         </span>
         <DashedLine className="text-muted-foreground flex-1" />
@@ -115,7 +115,7 @@ export const UseCasesPageGrid = () => (
             <div className="flex flex-col gap-3 p-6 pt-2">
               <div
                 className="flex size-9 items-center justify-center rounded-lg"
-                style={{ backgroundColor: "oklch(0.65 0.18 86.47 / 0.12)" }}
+                style={{ backgroundColor: "color-mix(in oklch, var(--brand) 12%, transparent)" }}
               >
                 <Icon className="size-4" strokeWidth={1.5} style={ICON_STYLE} />
               </div>
