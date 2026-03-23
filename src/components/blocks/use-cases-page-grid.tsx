@@ -78,7 +78,7 @@ export const UseCasesPageGrid = () => (
       {/* Header */}
       <div className="flex items-center gap-3 max-md:hidden">
         <DashedLine className="text-muted-foreground flex-1" />
-        <span className="bg-background text-brand shrink-0 font-mono text-sm tracking-widest uppercase">
+        <span className="text-brand shrink-0 font-mono text-sm tracking-widest uppercase">
           USE CASES
         </span>
         <DashedLine className="text-muted-foreground flex-1" />
